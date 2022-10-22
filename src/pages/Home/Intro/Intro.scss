@@ -59,8 +59,17 @@
 
 @media (max-width: 500px) {
   .homeIntro {
+    margin-top: -45px;
     .coffeeImageDiv {
-      display: none;
+      img {
+        display: none;
+      }
+    }
+    .titleAndBenefitsDiv {       
+      .introBenefitsDiv {
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 }

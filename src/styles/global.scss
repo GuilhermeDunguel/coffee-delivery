@@ -50,39 +50,16 @@ h1, h2, h3, h4, h5 {
 }
 
 @media (max-width: 1150px) {
-  html {
-    font-size: 80%;
-  }
-  body {
-    padding: 0 2.5rem;
-  }
-}
-
-@media (max-width: 650px) {
-  html {
-    font-size: 70%;
-  }
   body {
     padding: 0 1.25rem;
-    svg {
-      width: 15px;
-      height: 15px;
-    }
   }
 }
 
 @media (max-width: 500px) {
   html {
-    font-size: 55%;
+    font-size: 95%;
   }
   body {
     padding: 0 1.25rem;
-  }
-}
-
-@media (max-width: 1050px) {
-  svg {
-    width: 18px;
-    height: 18px;
   }
 }
