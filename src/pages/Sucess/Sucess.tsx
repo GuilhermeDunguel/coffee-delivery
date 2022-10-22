@@ -6,6 +6,7 @@ import { CurrencyDollar, MapPin, Timer } from "phosphor-react"
 
 import './Sucess.scss'
 
+
 export function Sucess() {
 
   const {

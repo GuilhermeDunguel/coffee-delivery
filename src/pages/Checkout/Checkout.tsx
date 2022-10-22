@@ -3,6 +3,7 @@ import { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { CheckoutDataContext } from '../../contexts/checkoutDataContext'
+
 import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
 import './Checkout.scss'
 import { CoffeeCard } from './CoffeeCard/CoffeeCard'
