@@ -2,7 +2,7 @@ import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money, Watch } from 'phos
 import { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import { CheckoutDataContext } from '../../contexts/checkoutDataContext'
+import { CheckoutDataContext } from '../../contexts/CheckoutDataContext'
 
 import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
 import './Checkout.scss'

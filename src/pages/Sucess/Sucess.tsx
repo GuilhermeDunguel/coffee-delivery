@@ -1,10 +1,10 @@
 import { useContext, useEffect } from "react"
-import { CheckoutDataContext } from "../../contexts/checkoutDataContext"
 
 import deliveryManSvg from '../../assets/deliveryManIllustration.svg'
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react"
 
 import './Sucess.scss'
+import { CheckoutDataContext } from '../../contexts/CheckoutDataContext'
 
 
 export function Sucess() {

@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import { CatalogDataContextProvider } from "./contexts/CatalogDataContext";
-import { CheckoutDataProvider } from "./contexts/checkoutDataContext";
+import { CheckoutDataProvider } from "./contexts/CheckoutDataContext";
 import { ShoppingCartProvider } from "./contexts/ShoppingCartContext";
 
 import { Router } from './Router'
