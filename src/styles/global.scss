@@ -1,0 +1,88 @@
+@import '../styles/theme.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  line-height: 130%;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  max-width: 1120px;
+  margin: auto;
+  background-color: $background;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Baloo 2', cursive;
+}
+
+@keyframes spin { 
+  100% { transform: rotate(360deg); } 
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $purple;
+  border-radius: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $purple-dark;
+}
+
+@media (max-width: 1150px) {
+  html {
+    font-size: 80%;
+  }
+  body {
+    padding: 0 2.5rem;
+  }
+}
+
+@media (max-width: 650px) {
+  html {
+    font-size: 70%;
+  }
+  body {
+    padding: 0 1.25rem;
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 55%;
+  }
+  body {
+    padding: 0 1.25rem;
+  }
+}
+
+@media (max-width: 1050px) {
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}

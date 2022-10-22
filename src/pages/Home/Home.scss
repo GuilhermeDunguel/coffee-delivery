@@ -1,0 +1,23 @@
+@import '../../styles/global.scss';
+@import '../../styles/theme.scss';
+
+.homeWrapper {
+  margin-bottom: 2.5rem;
+
+  footer {
+    margin-top: 2.5rem;
+
+    color: $base-label;
+    text-align: center;
+
+    a {
+      color: $base-label;
+    }
+
+    .codeBy::before {
+      content: '';
+      margin: 0 1rem;
+      border: 1px solid $base-label;
+    }
+  }
+}

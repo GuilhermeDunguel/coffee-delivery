@@ -1,0 +1,41 @@
+@import '../../styles/global.scss';
+@import '../../styles/theme.scss';
+
+.benefitSpanWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  svg {
+    box-sizing: content-box;
+
+    padding: 8px;
+
+    color: $background;
+    border-radius: 50px;
+  }
+}
+
+.darkYellow {
+  svg {
+    background-color: $yellow-dark;
+  }
+}
+
+.yellow {
+  svg {
+    background-color: $yellow;
+  }
+}
+
+.baseText {
+  svg {
+    background-color: $base-text;
+  }
+}
+
+.purple {
+  svg {
+    background-color: $purple;
+  }
+}

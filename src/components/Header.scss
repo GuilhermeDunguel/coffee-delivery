@@ -1,0 +1,88 @@
+@import '../styles/global.scss';
+@import '../styles/theme.scss';
+
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  padding: 2rem 0;
+
+  .headerLogoDiv {
+    img {
+      max-width: 5.3094rem;
+      width: 100%;
+    }
+  }
+
+  .headerNavbar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    .headerAdressSpan {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+      gap: 0.25rem;
+
+      color: $purple;
+      font-size: 0.875rem;
+      font-weight: 400;
+
+      border-radius: 6px;
+      background-color: $purple-light;
+
+      cursor: default;
+    }
+    .headerCartButton {
+      position: relative;
+      padding: 0.5rem;
+
+      color: $yellow-dark;
+      line-height: 0;
+
+      border-radius: 6px;
+      background-color: $yellow-light;
+
+      transition: 0.15s;
+
+      &:hover {
+        color: $background;
+        background-color: $yellow;
+      }
+      .numberOfItens {
+        position: absolute;
+        top: -0.5rem;
+        right: -0.5rem;
+
+        padding: 0.625rem 0.40625rem;
+
+        color: $white;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 0;
+        
+        border-radius: 100px;
+        background-color: $yellow-dark;
+      }
+      .cartEmptyDialog {
+        position: absolute;
+
+        bottom: -2rem;
+        left: -7.5rem;
+
+        padding: 0.2rem 0.3rem;
+
+        color: $danger-text;
+        font-size: 0.875rem;
+
+        border: none;
+        border-radius: 6px;
+
+        background-color: $danger-base;
+        transition: opacity 0.5s;
+      }
+    }
+  }
+}

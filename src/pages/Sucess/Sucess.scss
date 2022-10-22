@@ -1,0 +1,99 @@
+@import '../../styles/global.scss';
+@import '../../styles/theme.scss';
+
+.sucessWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-end;
+
+  margin-top: 5rem;
+  gap: 6.375rem;
+  .leftColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    .sucessMessageDiv {
+      .sucessHeading {
+        color: $yellow-dark;
+        font-size: 2rem;
+        font-weight: 800;
+      }
+      .sucessSpan {
+        color: $base-subtitle;
+        font-size: 1.25rem;
+        font-weight: 400;
+      }
+    }
+    .orderInfoBorderDiv {
+      padding: 2px;
+      background: linear-gradient(102.89deg, $yellow 2.61%, $purple 98.76%);
+      border-radius: 6px 36px;
+      .orderInfoDiv {
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        gap: 2rem;
+
+        background-color: $background;
+  
+        padding: 2.5rem;
+    
+        border-radius: 4px 34px;
+        .orderInfoItem {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          svg {
+            box-sizing: content-box;
+  
+            padding: 0.5rem;
+  
+            color: $white;
+            
+            border-radius: 80px;
+          }
+          .deliveryData {
+            color: $base-text;
+            font-size: 1rem;
+            span {
+              display: block;
+            }
+          }
+        }
+        .adressDiv {
+          svg {
+            background-color: $purple;
+          }
+        }
+        .deliveryTimeDiv {
+          svg {
+            background-color: $yellow;
+          }
+        }
+        .paymentMethodDiv {
+          svg {
+            background-color: $yellow-dark;
+          }
+        }
+      }
+    }
+  }
+  .rightColumn {
+    .deliveryIllustrationDiv {
+      img {
+        max-width: 30.75rem;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .sucessWrapper {
+  grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+}

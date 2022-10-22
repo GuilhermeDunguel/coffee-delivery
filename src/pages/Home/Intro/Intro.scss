@@ -1,0 +1,66 @@
+@import '../../../styles/global.scss';
+@import '../../../styles/theme.scss';
+
+.homeIntro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 5.75rem 0;
+
+  gap: 3.5rem;
+
+  .titleAndBenefitsDiv {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+
+    gap: 4.125rem;
+
+    .introTitleAndSubtitleDiv {
+      .introTitle {
+        font-size: 3rem;
+        font-weight: 800;
+      }
+      
+      .introSubtitle {
+        font-size: 1.25rem;
+        font-weight: 400;
+      }
+    }
+    .introBenefitsDiv {
+      columns: 2;
+      column-gap: 0;
+    }
+  }
+  .introBackground {
+    position: absolute;
+    z-index: -1;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .coffeeImageDiv {
+    max-width: 476px;
+    width: 100%;
+  } 
+}
+
+@media (max-width: 1050px) {
+  .homeIntro {
+    flex-direction: column;
+
+    .coffeeImageDiv {
+      position: absolute;
+      z-index: -1;
+      opacity: 25%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .homeIntro {
+    .coffeeImageDiv {
+      display: none;
+    }
+  }
+}

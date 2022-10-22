@@ -1,0 +1,115 @@
+@import '../../../../styles/theme.scss';
+
+.catalogItemWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 0 1.25rem;
+
+  max-width: 16rem;
+  text-align: center;
+
+  border-radius: 6px 36px;
+  background-color: $base-card;
+
+  .coffeeImageDiv {
+    margin-top: -1.25rem;
+  }
+  .tagsDiv {
+    display: flex;
+    gap: .25rem;
+    margin: 12px 0 1rem 0;
+    span {
+      padding: 0.25rem 0.5rem;
+
+      color: $yellow-dark;
+      font-size: 0.625rem;
+      font-weight: 700;
+      line-height: .8125rem;
+
+      border-radius: 99px;
+      background-color: $yellow-light;
+    }
+  }
+  .coffeeNameHeading {
+    margin-bottom: 0.5rem;
+
+    color: $base-subtitle;
+    font-size: 1.25rem;
+  }
+  .coffeeDescriptionParagraph {
+    margin-bottom: 2rem;
+
+    color: $base-label;
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+  .catalogItemFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-bottom: 1.25rem;
+
+    .moneySignSpan {
+      font-size: 0.875rem;
+      font-weight: 400;
+      .coffeePrice {
+        font-size: 1.5rem;
+        font-weight: 800;
+        font-family: 'Baloo 2', cursive;
+      }
+    }
+    .quantityAndAddToCartDiv {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .quantityInput {
+        max-width: 4.5rem;
+        height: 2.375rem;
+  
+        padding: 0.5rem;
+
+        font-size: 1.25rem;
+
+        border: none;
+        border-radius: 6px;
+        background-color: $base-button;
+
+        &:focus {
+          outline: 2px solid $purple;
+        }
+      }
+
+      .addToCartButton {
+        padding: 0.5rem;
+
+        color: $white;
+        line-height: 0;
+
+        border-radius: 6px;
+        background-color: $purple-dark;
+
+        transition: background-color 0.15s;
+
+        &:hover {
+          background-color: $purple;
+        }
+
+        &:focus {
+          outline: 1px solid #21be21;
+          background-color: #21be21;
+          transition: background-color 0.15s;
+        }
+
+        &:disabled {
+          background-color: $purple-dark;
+        }
+      }
+    }
+  }
+}

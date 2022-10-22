@@ -1,0 +1,144 @@
+@import '../../../styles/global.scss';
+@import '../../../styles/theme.scss';
+
+.coffeeCardWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  border-bottom: 1px solid $base-button;
+
+  .coffeeImageDiv {
+    align-self: flex-start;
+    img {
+      max-width: 4rem;
+      max-height: 4rem;
+    }
+  }
+
+  .orderDataAndEditDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    width: 100%;
+
+    .orderDataDiv {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .coffeeName {
+        color: $base-subtitle;
+        font-size: 1rem;
+      }
+      .coffeePrice {
+        color: $base-text;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+    }
+    .orderEditDiv {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      input {
+        max-width: 4.5rem;
+        height: 2rem;
+
+        padding: 0.5rem;
+
+        font-size: 1rem;
+
+        border: none;
+        border-radius: 6px;
+        background-color: $base-button;
+
+        &:focus {
+          outline: 2px solid $purple;
+        }
+      }
+      button {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+
+        height: 2rem;
+        
+        padding: 0.5rem;
+
+        color: $base-text;
+        font-size: 0.875rem;
+        line-height: 0;
+
+        border-radius: 6px;
+        background-color: $base-button;
+
+        &:hover {
+          background-color: $base-hover;
+        }
+
+        &:focus {
+          outline: 2px solid $purple;
+        }
+
+        svg {
+          color: $purple;
+        }
+      }
+    }
+    .removeCardPopUp.open {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .removeCardPopUp {
+      display: none;
+      margin-top: 0.5rem;
+      
+      span {
+        color: $purple-dark;
+        font-size: 0.875rem;
+      }
+
+      .removeCardButtonsPopUp {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.5rem;
+
+        button {
+          padding: 0.3rem 0.8rem;
+
+          color: $danger-text;
+          font-weight: 700;
+
+          border-radius: 6px;
+          background-color: $danger-base;
+
+          transition: 0.15s;
+
+          &:hover {
+            color: $white;
+            background-color: $danger-hover;
+          }
+
+          &.confirm {
+            color: $correct-text;
+            background-color: $correct-base;
+
+            &:hover {
+              color: $white;
+              background-color: $correct-hover;
+            }
+          }
+        }
+      }
+    }
+  }
+}

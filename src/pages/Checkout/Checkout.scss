@@ -1,0 +1,256 @@
+@import '../../styles/global.scss';
+@import '../../styles/theme.scss';
+
+.checkoutWrapper {
+  display: grid;
+  grid-template-columns: 40rem 28rem;
+  gap: 2rem;
+
+  margin-top: 2.5rem;
+
+  .leftColumn {
+    .adressSection {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      
+      margin-top: 1rem;
+      padding: 2.5rem;
+
+      border-radius: 6px;
+      background-color: $base-card;
+
+      .adressHeader {
+        display: flex;
+        gap: 0.5rem;
+
+        svg {
+          color: $yellow-dark;
+        }
+
+        .adressHeaderTitle {
+          display: block;
+        
+          color: $base-subtitle;
+          font-size: 1rem;
+        }
+
+        .adressHeaderSubtitle {
+          color: $base-text;
+          font-size: 0.875rem;
+        }
+      }
+      .adressForm {
+        display: grid;
+        grid-template-columns: 12.5rem 17.25rem 3.75rem;
+        grid-template-rows: auto;
+
+        gap: 1rem;
+
+        input {
+          padding: 0.75rem;
+
+          font-size: 0.875rem;
+
+          border: none;
+          border: 1px solid $base-button;
+          border-radius: 4px;
+          background-color: $base-input;
+
+          &:focus {
+            outline: 2px solid $yellow;
+          }
+        }
+
+        input[placeholder='CEP'] {
+          grid-row: 1;
+        }
+        input[placeholder='Rua'] {
+          grid-column: 1/4;
+          grid-row: 2;
+        }
+        input[placeholder='Número'] {
+          grid-row: 3;
+        }
+        input[placeholder='Complemento'] {
+          grid-column: 2/4;
+          grid-row: 3;
+        }
+        input[placeholder='Bairro'] {
+          grid-row: 4;
+        }
+        input[placeholder='Cidade'] {
+          grid-row: 4;
+        }
+        input[placeholder='UF'] {
+          grid-row: 4;
+        }
+      }
+    }
+    .paymentMethodSection {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      margin-top: 0.75rem;
+      padding: 2.5rem;
+
+      border-radius: 6px;
+      background-color: $base-card;
+      .paymentMethodHeader {
+        display: flex;
+        gap: 0.5rem;
+
+        svg {
+          color: $purple;
+        }
+
+        .paymentMethodHeaderTitle {
+          display: block;
+
+          color: $base-subtitle;
+          font-size: 1rem;
+        }
+        .paymentMethodHeaderSubtitle {
+          color: $base-text;
+          font-size: 0.875rem;
+        }
+      }
+      .paymentMethodButtons {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        button {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+
+          flex: 1;
+
+          padding: 1rem;
+
+          color: $base-text;
+          font-size: 0.75rem;
+          line-height: 0;
+
+          border-radius: 6px;
+          background-color: $base-button;
+
+          transition: background-color 0.1s;
+
+          svg {
+            color: $purple;
+            font-size: 1rem;
+          }
+
+          &:hover {
+            background-color: $base-hover;
+          }
+        }
+        .active {
+          outline: 2px solid $purple;
+        }
+      }
+    }
+  }
+  .rightColumn {
+    .orderSummarySection {
+      margin-top: 1rem;
+      padding: 2.5rem;
+
+      border-radius: 6px;
+      background-color: $base-card;
+
+      .orderDetailsDiv {
+        max-height: 20.475rem;
+        overflow-y: auto;
+      }
+
+      .ifCartEmpty {
+        color: $yellow-dark;
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+
+      .orderSubtotal {
+        display: flex;
+        flex-direction: column;
+
+        margin: 1.5rem 0;
+
+        gap: .875rem;
+      
+        color: $base-subtitle;
+
+        .subtotal {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .smallFont {
+          span:nth-child(1) {
+            font-size: 0.875rem;
+          }
+          span:nth-child(2) {
+            font-size: 1rem;
+          }
+        }
+        .biggerFont {
+          span {
+            font-size: 1.25rem;
+            font-weight: 700;
+          }
+        }
+      }
+      .placeOrderButton {
+        width: 100%;
+
+        padding: 0.75rem 0.5rem;
+
+        color: $white;
+
+        border-radius: 6px;
+        background-color: $yellow;
+
+        transition: 0.15s;
+
+        &[disabled] {
+          cursor: not-allowed;
+          opacity: 60%;
+        }
+        &:hover {
+          background-color: $yellow-dark;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1140px) {
+  .checkoutWrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .checkoutWrapper {
+    margin-bottom: 1.5rem;
+    .leftColumn {
+      .adressSection {
+        .adressForm {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  .paymentMethodButtons {
+    flex-direction: column;
+    button {
+      width: 100%;
+    }
+  }
+}
