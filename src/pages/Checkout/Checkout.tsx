@@ -1,5 +1,5 @@
 import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money, Watch } from 'phosphor-react'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { CheckoutDataContext } from '../../contexts/CheckoutDataContext'
@@ -28,7 +28,6 @@ export function Checkout() {
 
   const {
     CartItens,
-    setCartItem,
   } = useContext(ShoppingCartContext)
 
   const {
@@ -55,8 +54,6 @@ export function Checkout() {
       paymentMethod: paymentMethod,
     }
     handleSavingCheckoutData(dataToSave)
-    
-    setCartItem([])
     navigate('/sucess');
   }
   

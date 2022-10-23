@@ -1,10 +1,9 @@
 import { ShoppingCartSimple } from 'phosphor-react'
 import { useContext, useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { ShoppingCartContext, ShoppingCartProps } from '../../../../contexts/ShoppingCartContext';
 
 import './CatalogItem.scss'
-
-
 interface CatalogItemProps {
   imgSrc: string;
   tags: string[];
@@ -15,25 +14,21 @@ interface CatalogItemProps {
 
 export function CatalogItem(props: CatalogItemProps) {
 
-  const numberOfCupsInput = useRef<any>(null);
-  const inputValue = Number(numberOfCupsInput.current?.value)
-
   const {
-    CartItens,
-    numberOfCups,
     setCartItem,
-    setCupsNumber
   } = useContext(ShoppingCartContext)
+
+  const [localNumberOfCups, setLocalNumberOfCups] = useState(0)
 
   const newItemAtCart = {
     imgSrc: props.imgSrc,
     name: props.name,
     price: props.price,
-    value: numberOfCups
+    value: localNumberOfCups,
   }
 
   function handleAddToCart(data: ShoppingCartProps) {
-    setCartItem([...CartItens, data])
+    setCartItem(data)
   }
 
   return (
@@ -55,29 +50,27 @@ export function CatalogItem(props: CatalogItemProps) {
             R$
             <strong className='coffeePrice'> {props.price.toFixed(2)}</strong>
         </span>
-        <form onSubmit={(event) => {
-          event.preventDefault()
-        }} className='quantityAndAddToCartDiv'>
+        <div className='quantityAndAddToCartDiv'>
           <input 
-            ref={numberOfCupsInput}
             className='quantityInput'
             placeholder='0' 
             type="number" 
             id='quantity'
             min={1}
             max={9}
+            value={localNumberOfCups}
+            onChange={(event) => setLocalNumberOfCups(Number(event?.target.value))}
             required
-            onChange={(event) => {
-              setCupsNumber(Number(event.target.value))
-            }}
             />
           <button 
             onClick={() => {
-              inputValue < 1 ? true : handleAddToCart(newItemAtCart)
-            }} 
+              handleAddToCart(newItemAtCart)
+              setLocalNumberOfCups(0)
+            }}
             className='addToCartButton'
+            disabled={localNumberOfCups === 0}
             ><ShoppingCartSimple size={22} weight={'fill'}/></button>
-        </form>
+        </div>
       </div>
     </div>
   )

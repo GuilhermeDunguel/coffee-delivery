@@ -1,12 +1,12 @@
 import { Trash } from 'phosphor-react'
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ShoppingCartContext } from '../../../contexts/ShoppingCartContext';
 import './CoffeeCard.scss'
 
 interface CoffeeCardProps {
-  imgSrc: string,
-  name: string,
-  price: number
+  imgSrc: string;
+  name: string;
+  price: number;
   value: number;
 }
 
@@ -14,7 +14,7 @@ export function CoffeeCard(props: CoffeeCardProps) {
 
   const [isRemoveCardPopUpOpen, setIsRemoveCardPopUpOpen] = useState(false)
 
-  const {removeCartItem} = useContext(ShoppingCartContext)
+  const {removeCartItem, handleEdittingCartItem} = useContext(ShoppingCartContext)
  
   return (
     <div className='coffeeCardWrapper'>
@@ -24,12 +24,15 @@ export function CoffeeCard(props: CoffeeCardProps) {
       <div className='orderDataAndEditDiv'>
         <div className='orderDataDiv'>
           <span className='coffeeName'>{props.name}</span>
-          <span className='coffeePrice'>R$ {(props.price * props.value).toFixed(2)}</span>
+          <span className='coffeePrice'>R$ {(props.value * props.price).toFixed(2)}</span>
         </div>
         <div className='orderEditDiv'>
           <input 
             type="number" 
             placeholder='0' 
+            onChange={(event) => {
+              handleEdittingCartItem(props.name, Number(event.target.value))
+            }}
             defaultValue={props.value}
             max={9} 
             min={1}
@@ -53,3 +56,4 @@ export function CoffeeCard(props: CoffeeCardProps) {
     </div>
   )
 }
+

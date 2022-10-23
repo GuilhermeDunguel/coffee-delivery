@@ -13,8 +13,6 @@ export function Header() {
 
   const localStorageAdressData = JSON.parse(localStorageData!)
 
-  console.log(localStorageAdressData)
-
   const {
     CartItens
   } = useContext(ShoppingCartContext)

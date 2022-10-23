@@ -9,10 +9,11 @@ export interface ShoppingCartProps {
 
 interface ShoppingCartContextProps {
   CartItens: ShoppingCartProps[];
-  setCartItem: (props: ShoppingCartProps[]) => void;
+  setCartItem: (props: ShoppingCartProps) => void;
   numberOfCups: number;
   setCupsNumber: (number: number) => void;
   removeCartItem: (itemName: string) => void;
+  handleEdittingCartItem: (CartSelected: string, ItemValueUpdated: number) => void;
 }
 
 interface ShoppingCartProviderProps {
@@ -27,8 +28,14 @@ export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
 
   const [CartItens, setCartItens] = useState<ShoppingCartProps[]>([])
 
-  function setCartItem(props: ShoppingCartProps[]) {
-    setCartItens(props)
+  function setCartItem(props: ShoppingCartProps) {
+    const itemEqual = CartItens.filter(item => item.name === props.name)
+    if(itemEqual.length === 0) {
+      setCartItens([...CartItens, props])
+    } else {
+      CartItens.map(item => item.name === props.name ?
+        item.value = item.value + props.value : null )
+    }
   }
 
   function removeCartItem(itemName: string) {
@@ -37,6 +44,15 @@ export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
     })
 
     setCartItens(CartItensUpdated)
+  }
+
+  function handleEdittingCartItem(CartSelected: string, ItemValueUpdated: number) {
+    const selectedItem: ShoppingCartProps = CartItens.find(item => item.name === CartSelected)!
+
+    const newItems = CartItens.map(item => item.name === selectedItem.name ? 
+      {...selectedItem, value: ItemValueUpdated} : item)
+      
+    setCartItens(newItems)
   }
 
   function setCupsNumber(number: number) {
@@ -50,7 +66,8 @@ export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
         setCartItem,
         numberOfCups,
         setCupsNumber,
-        removeCartItem
+        removeCartItem,
+        handleEdittingCartItem
       }}>
       {children}
     </ShoppingCartContext.Provider>
