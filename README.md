@@ -1,7 +1,7 @@
 <h1 align='center'>Coffee Delivery</h1>
 
 <br>
-<img src="https://i.imgur.com/E8V771J.jpeg" alt='projectBanner'>
+<img src="https://i.imgur.com/HmPvtBt.jpg" alt='projectBanner'>
 <hr>
 <h2 align='center'><a href="https://coffee-delivery-teal.vercel.app/">Visite o projeto clicando aqui</a></h2>
 <h2>🟢 Sobre:</h2>
