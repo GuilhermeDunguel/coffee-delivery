@@ -3,7 +3,7 @@
 <br>
 <img src="https://i.imgur.com/HmPvtBt.jpg" alt='projectBanner'>
 <hr>
-<h2 align='center'><a href="https://coffee-delivery-teal.vercel.app/">Visite o projeto clicando aqui</a></h2>
+<h2 align='center'><a href="https://coffee-delivery-teal.vercel.app">Visite o projeto clicando aqui</a></h2>
 <h2>🟢 Sobre:</h2>
   <h3>🗂️ O projeto:</h3>
     <ul>
